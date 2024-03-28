@@ -1,0 +1,6 @@
+#!/bin/bash
+echo -e '<!DOCTYPE foo [ <!ENTITY nbsp " " > ]>\n<body>' > $1.xml
+sed -n "/Values of/,/<\/p><hr>/p" $1.html | tail -n+2 | head -n-2 >> $1.xml
+echo '</p></body>' >> $1.xml
+xsltproc conv.xsl $1.xml > $1.txt
+sed "s/^[0-9]* \([^\[]*\)\[\(.*\)\].*$/\[\1\],\n\2,/" $1.txt

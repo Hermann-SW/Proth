@@ -1,0 +1,2 @@
+#1/bin/bash
+sed -e ':x /$/ { N; s/\n//g ; bx }' $1 | sed "s/,$/\]/"
