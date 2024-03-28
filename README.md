@@ -70,3 +70,10 @@ $ gp -q
 22412
 ? 
 ```
+
+Proth.json is not big:  
+```
+$ du --bytes Proth.json 
+146581	Proth.json
+$ 
+```
