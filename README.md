@@ -55,7 +55,7 @@ Sorting odd k #P[k] shows maximal number of Proth primes (=108) for k=165:
 ? 
 ```
 
-In total there are 22,412 Proth primes k\*2^m+1 with odd k<1200 and m<3,600,000:  
+In total there are 22,412 Proth primes k\*2^m+1 with odd k<1200 and m≥3,600,000:  
 ```
 ? vecsum([#P[2*i-1]|i<-[1..600]])
 22412
