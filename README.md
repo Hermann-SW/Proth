@@ -8,7 +8,7 @@ The k with maximal number of primes was k=165.
 I did search the first terms on oeis.org and found the corresponding sequence:  
 https://oeis.org/A032459
 
-And that pointed to "List of primes  k · 2n + 1  for  k < 300":  
+And that pointed to "List of primes  k · 2” + 1  for  k < 300":  
 http://www.prothsearch.com/riesel1.html
 
 That page linked to pages for 300<k<600, 600<k<900 and 900<k<1200:  
@@ -55,10 +55,10 @@ Sorting odd k #P[k] shows maximal number of Proth primes (=108) for k=165:
 ? 
 ```
 
-In total there are 22,412 Proth primes k\*2^m+1 with odd k<1200 and m≥3,600,000:  
+In total there are 22,413 Proth primes k\*2^m+1 with odd k<1200 and m≥3,600,000:  
 ```
 ? vecsum([#P[2*i-1]|i<-[1..600]])
-22412
+22413
 ? 
 ```
 
@@ -67,19 +67,19 @@ Alternative use of Proth.json via raw github URL, with curl installed:
 $ gp -q
 ? P=extern("curl -s 'https://raw.githubusercontent.com/Hermann-SW/Proth/main/Proth.json'");
 ? vecsum([#P[2*i-1]|i<-[1..600]])
-22412
+22413
 ? 
 ```
 
 Proth.json is not big:  
 ```
 $ du --bytes Proth.json 
-146581	Proth.json
+146582	Proth.json
 $ 
 ```
 
 
-Validation fails:  
+Validation failed:  
 ```
 ? forstep(k=1,1200,2,for(i=2,#P[k],if(P[k][i]<=P[k][i-1],print(k," ",i))));
 275 34
@@ -88,10 +88,8 @@ Validation fails:
 ? 
 ```
 
-Reason is that there is a missing comma on 1st HTML page:  
-```
-275   7, …, 285435, 350949 485505, 821221, 834297, 3585539 [4500000]
-```
+Reason is that there was a missing comma on 1st HTML page:  
+![missing_comma.png](missing_comma.png)
 
 Fixed now:
 ```
