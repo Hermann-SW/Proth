@@ -77,3 +77,25 @@ $ du --bytes Proth.json
 146581	Proth.json
 $ 
 ```
+
+
+Validation fails:  
+```
+? forstep(k=1,1200,2,for(i=2,#P[k],if(P[k][i]<=P[k][i-1],print(k," ",i))));
+275 34
+? #P[275]
+36
+? 
+```
+
+Reason is that there is a missing comma on 1st HTML page:  
+```
+275   7, …, 285435, 350949 485505, 821221, 834297, 3585539 [4500000]
+```
+
+Fixed now:
+```
+? P=readvec("Proth.json")[1];
+? forstep(k=1,1200,2,for(i=2,#P[k],if(P[k][i]<=P[k][i-1],print(k," ",i))));
+? 
+```
