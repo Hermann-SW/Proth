@@ -61,3 +61,12 @@ In total there are 22,412 Proth primes k\*2^m+1 with odd k<1200 and m<3,600,000:
 22412
 ? 
 ```
+
+Alternative use of Proth.json via raw github URL, with curl installed:
+```
+$ gp -q
+? P=extern("curl -s 'https://raw.githubusercontent.com/Hermann-SW/Proth/main/Proth.json'");
+? vecsum([#P[2*i-1]|i<-[1..600]])
+22412
+? 
+```
