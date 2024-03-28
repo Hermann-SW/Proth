@@ -100,7 +100,7 @@ Fixed now:
 ? 
 ```
 
-Biggest Proth prime in Proth.jon does have nearly 5million decimal digits:  
+Biggest Proth prime in Proth.json does have nearly 5million decimal digits:  
 ```
 ? vecsort([[P[2*i-1][#P[2*i-1]],2*i-1]|i<-[1..600]])[600]
 %7 = [16408818, 3]
