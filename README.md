@@ -88,7 +88,7 @@ Validation failed:
 ? 
 ```
 
-Reason was that there was a missing comma on 1st HTML page:  
+Reason: there was a missing comma on 1st HTML page.  
 ![missing_comma.png](missing_comma.png)
 
 Fixed now:
