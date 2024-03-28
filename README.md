@@ -99,3 +99,12 @@ Fixed now:
 ? forstep(k=1,1200,2,for(i=2,#P[k],if(P[k][i]<=P[k][i-1],print(k," ",i))));
 ? 
 ```
+
+Biggest Proth prime in Proth.jon does have nearly 5million decimal digits:  
+```
+? vecsort([[P[2*i-1][#P[2*i-1]],2*i-1]|i<-[1..600]])[600]
+%7 = [16408818, 3]
+? #digits(3*2^16408818+1)
+%8 = 4939547
+? 
+```
