@@ -79,19 +79,7 @@ $
 ```
 
 
-Validation failed:  
-```
-? forstep(k=1,1200,2,for(i=2,#P[k],if(P[k][i]<=P[k][i-1],print(k," ",i))));
-275 34
-? #P[275]
-36
-? 
-```
-
-Reason: there was a missing comma on 1st HTML page.  
-![missing_comma.png](missing_comma.png)
-
-Fixed now:
+Validation:  
 ```
 ? P=readvec("Proth.json")[1];
 ? forstep(k=1,1200,2,for(i=2,#P[k],if(P[k][i]<=P[k][i-1],print(k," ",i))));
@@ -106,3 +94,8 @@ Biggest Proth prime in Proth.json does have nearly 5million decimal digits:
 %8 = 4939547
 ? 
 ```
+
+### history
+I reported missing comma on website that existed when this repo was created, and it was fixed 4/21/2024.  
+![missing_comma.png](missing_comma.png)
+
