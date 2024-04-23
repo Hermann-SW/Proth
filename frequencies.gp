@@ -8,7 +8,7 @@ ten(a,b,s)={
         if(N<=n&&n<N+s,c+=1)
       )
     );
-    print(N,"-",a+s-1," ",c);
+    print(N,"-",N+s-1," ",c);
     C+=c;
   );
   print("total ",C);
