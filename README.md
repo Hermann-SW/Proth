@@ -55,7 +55,7 @@ Sorting odd k #P[k] shows maximal number of Proth primes (=108) for k=165:
 ? 
 ```
 
-In total there are 22,413 Proth primes k\*2^m+1 with odd k<1200 and m≥3,600,000:  
+In total there are 22,413 Proth primes k\*2^m+1 with odd k<1200 and m≥3,600,000 (up to each k's Lim):  
 ```
 ? vecsum([#P[2*i-1]|i<-[1..600]])
 22413
@@ -68,6 +68,14 @@ $ gp -q
 ? P=extern("curl -s 'https://raw.githubusercontent.com/Hermann-SW/Proth/main/Proth.json'");
 ? vecsum([#P[2*i-1]|i<-[1..600]])
 22413
+? 
+```
+
+In total there are 22,166 Proth primes k\*2^m+1 with odd k<1200 up to minial common Lim 3,600,000:  
+```
+? P=readvec("Proth.json")[1];
+? c=0;forstep(k=1,1200,2,foreach(P[k],n,if(n<=3600000,c+=1)));c
+22166
 ? 
 ```
 
@@ -94,6 +102,8 @@ Biggest Proth prime in Proth.json does have nearly 5million decimal digits:
 %8 = 4939547
 ? 
 ```
+
+[frequencies.gp](frequencies.gp) does frequency analysis as seen in top 6 tables of http://www.prothsearch.com/frequencies.html. Execution output in [frequencies.txt](frequencies.txt) numbers correspond to snapshot [frequencies.html](frequencies.html).
 
 ### history
 I reported missing comma on website that existed when this repo was created, and it was fixed 4/21/2024.  
